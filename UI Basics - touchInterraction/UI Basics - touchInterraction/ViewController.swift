@@ -19,8 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
-        style()
-        layout()
+        framesVsBonds()
+//        style()
+//        layout()
         // Do any additional setup after loading the view.
     }
 
@@ -77,12 +78,13 @@ extension ViewController {
     }
     
     @objc func exclusiveTouchButtonPressed() {
-        flipFlag3 = !flipFlag3
-        if flipFlag1 {
-            exclusiveTouchButton.backgroundColor = .systemBlue
-        } else {
         exclusiveTouchButton.backgroundColor = .systemOrange
-        }
+//        flipFlag3 = !flipFlag3
+//        if flipFlag1 {
+//            exclusiveTouchButton.backgroundColor = .systemBlue
+//        } else {
+//        exclusiveTouchButton.backgroundColor = .systemOrange
+//        }
     }
     
     func layout() {
@@ -99,5 +101,28 @@ extension ViewController {
         view.safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 4)
         ]
         NSLayoutConstraint.activate(constrain)
+    }
+}
+
+extension ViewController {
+    func framesVsBonds() {
+        
+        let rectangleView: UIView = UIView()
+        let rectangleBond: UIView = UIView()
+        
+        view.addSubview(rectangleView)
+        view.addSubview(rectangleBond)
+        rectangleView.backgroundColor = .systemBlue
+        rectangleView.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        rectangleView.transform = CGAffineTransform(rotationAngle: 90)
+        print(rectangleView.frame)
+        print(rectangleView.bounds)
+        
+
+//        rectangleBond.backgroundColor = .systemOrange
+//        rectangleBond.bounds = CGRect(x: 100, y: 100, width: 100, height: 100)
+//        rectangleBond.transform = CGAffineTransform(rotationAngle: 90)
+//        print(rectangleBond.bounds)
+//        rectangleBond. = CGPoint(x: 200, y: 200)
     }
 }
